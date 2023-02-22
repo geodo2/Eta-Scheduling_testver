@@ -60,11 +60,12 @@ function exportHTML(emptyArr, setPopup, setPopupName) {
   }
   return list;
 }
-export const shareKakao = (route, title) => { // url이 id값에 따라 변경되기 때문에 route를 인자값으로 받아줌
+export const shareKakao = (route, title) => {
+   // url이 id값에 따라 변경되기 때문에 route를 인자값으로 받아줌
   if (window.Kakao) {
     const kakao = window.Kakao;
     if (!kakao.isInitialized()) {
-      kakao.init('6ec8ed312554797c30beb43e52929d74'); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
+      kakao.init("1a3ee03ee8505eb7f3edf4cbf962ba8b"); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
     }
 
     kakao.Link.sendDefault({
@@ -74,16 +75,16 @@ export const shareKakao = (route, title) => { // url이 id값에 따라 변경�
         description: "설명", // 인자값으로 받은 title
         imageUrl: "이미지 url",
         link: {
-          mobileWebUrl: route, // 인자값으로 받은 route(uri 형태)
-          webUrl: route
+          mobileWebUrl: 'www.naver.com', // 인자값으로 받은 route(uri 형태)
+          webUrl: 'www.naver.com'
         }
       },
       buttons: [
         {
-          title: "title",
+          title: "이버튼 눌러봐",
           link: {
-            mobileWebUrl: route,
-            webUrl: route
+            mobileWebUrl: 'www.naver.com',
+            webUrl: 'www.naver.com'
           }
         }
       ]
@@ -103,7 +104,6 @@ const Result = (props) => {
   const [popupname, setPopupName] = useState("Hello");
   const params = useParams();
   const code = params.code;
-  alert(code);
   console.log(code+ ' 확인');
   useEffect(() => {
     console.log(location.state);
@@ -130,13 +130,15 @@ const Result = (props) => {
     document.body.appendChild(script);
     return () => document.body.removeChild(script);
   }, []);
-
+    var link='localhost:3000/result/'+code;
   return (
     <>
       <div class="App">
-      <button onClick={() => shareKakao('localhost:3000', 'title')}>
-      <img className="w-12 h-12" src={`${process.env.PUBLIC_URL}/assets/KakaoLogo.png`} alt={"Kakao Logo"} />
+      <button onClick={() => shareKakao(link, 't123')}>
+      <img src="lion.png"  />
       </button>
+
+      <img src="lion.png"  />
         <h1>
           <em>시간을 클릭해보세요!</em>
         </h1>
