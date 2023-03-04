@@ -33,3 +33,7 @@ https://road-flute-50f.notion.site/Eta-Scheduling-Site-Guideline-fe7559451432453
 관리자 오픈채팅 : [https://open.kakao.com/o/sIAAVdGe](https://open.kakao.com/o/sGmPviKe)
 
 ⚠️ 버그가 발견되거나, 서비스 이용에 어려움이 있으시다면 위의 오픈채팅으로 연락 주세요! 빠른 조치 취하도록 하겠습니다! 😃
+
+
+
+www.handongapp/
